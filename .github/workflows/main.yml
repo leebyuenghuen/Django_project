@@ -39,12 +39,12 @@ jobs:
 # 각자 ECR의 repo 넣기
       - name: Build, tag, and push image to Amazon ECR
         env:
-          ECR_REGISTRY: 940168446867.dkr.ecr.eu-central-1.amazonaws.com
+          ECR_REGISTRY: public.ecr.aws/h1f8k5p0/project
           ECR_REPOSITORY: project
           IMAGE_TAG: django_lastest
         run: |
-          docker build -t 940168446867.dkr.ecr.eu-central-1.amazonaws.com/project:django_lastest .
-          docker push 940168446867.dkr.ecr.eu-central-1.amazonaws.com/project:django_lastest
+          docker build -t public.ecr.aws/h1f8k5p0/project:django_team .
+          docker push public.ecr.aws/h1f8k5p0/project:django_team
 # was rollout restart
       - name: was-deploy restart
         uses: Consensys/kubernetes-action@master
